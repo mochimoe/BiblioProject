@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+a:5:{i:0;s:350:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Biblio - Beranda</title>
+        <title>Biblio - ";s:5:"title";N;i:1;s:1699:"</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
@@ -21,26 +21,20 @@
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
-                    <a class="fas fa-user dropdown-toggle" style="color:black"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <a class="fas fa-user dropdown-toggle" style="background-color: black;"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="/posts/create">Buat Post</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/home/logout">Logout</a>
+                        <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </div>
                 
             </div>
         </section>
 
-        <section id="header" class="container">
-            <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-                <div class="col-md-6 px-0">
-                    <h1 class="display-4">Biblio</h1>
-                    <p class="lead my-3">Review buku disini</p>
-                </div>
-            </div>
-
+        <section class="container">
+            ";s:7:"content";N;i:2;s:811:"
         </section>
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->
@@ -52,3 +46,4 @@
         </script>
     </body>
 </html>
+";}

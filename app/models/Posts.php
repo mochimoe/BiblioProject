@@ -13,7 +13,7 @@ class Users extends Model
         $this-setReadConnectionService('db');
         $this->setWriteConnestionSerive('db');
         $this->setSchema('dbo');
-        $this->setSource('users');
+        $this->setSource('posts');
     }
 
     public function onConstruct(){

@@ -9,6 +9,7 @@ class SessionController extends ControllerBase
 
     public function indexAction()
     {
+        $this->tag->setTitle('Masuk');
         return $this->view;
         
 
@@ -26,6 +27,8 @@ class SessionController extends ControllerBase
 
     public function startAction()
     {
+        $this->tag->setTitle('Beranda');
+        
         if (true === $this->request->isPost()) {
           
             $email    = $this->request->getPost('email');

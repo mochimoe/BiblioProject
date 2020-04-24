@@ -21,19 +21,17 @@
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
-                    <a class="fas fa-user dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-
+                    <a class="fas fa-user dropdown-toggle" style="color:black" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Buat Post</a>
+                        <a class="dropdown-item" href="/posts/create">Buat Post</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </div>
-                
             </div>
         </section>
 
-        <section class="container">
+        <section class="container mb-3">
             {% block content %}{% endblock %}
         </section>
 

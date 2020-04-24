@@ -6,6 +6,7 @@ class SignupController extends ControllerBase
 {
     public function indexAction()
     {
+        $this->tag->setTitle('Daftar Akun');
         
     }
     public function registerAction(){

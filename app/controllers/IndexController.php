@@ -10,6 +10,9 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
+        $this->tag->setTitle('Beranda');
+
+
         $css1 = new Css('css/style.css');
         $this->assets->addAsset($css1);
        
