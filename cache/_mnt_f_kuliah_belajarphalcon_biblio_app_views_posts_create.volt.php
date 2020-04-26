@@ -13,30 +13,78 @@
     </head>
     <body>
         <section id="navbar">
-            <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light">
-                <h5 class="my-0 mr-md-auto font-weight-bolder">Biblio</h5>
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light shadow-sm">
+                <span class="my-0 mr-md-auto "><a href="/" class="logo text-dark font-weight-bold">Biblio</a></span>
                 <nav class=" my-2 my-md-0 mr-md-3">
                     <a class="p-3 text-dark" href="#">Beranda</a>
                     <a class="p-3 text-dark" href="#">Tentang</a>
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
-                    <a class="fas fa-user dropdown-toggle" style="background-color: black;"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-
+                    <a class="fas fa-user dropdown-toggle" style="color: black;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="/posts/create">Buat Post</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="/home/logout">Logout</a>
                     </div>
                 </div>
-                
             </div>
         </section>
 
-        <section class="container">
+        <section class="mb-3">
             
-    <h1>Index</h1>
-    <p class='important'>Create PostS</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <div class="section-row"><h5 class=" ">Create Post</h5></div>
+                <div class="card border border-0 bg-secondary">
+                    <div class="card-body">
+                        <form action="/posts/save" method="post">
+                            <div class="form-group">
+                                <label for="judul" class="text-white">Judul Buku</label>
+                                <input type="text" name="judul"class="form-control border border-0">
+                            </div>
+                            <div class="form-group">
+                                <label for="judul" class="text-white ">Isi Post</label>
+                                <textarea class="rounded border border-0 form-control" name="isi" ></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-light">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="section-row"><h5 class=" ">Linimasa</h5></div>
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h6 class=" font-weight-bold">Bagaimana reaksimu setelah membaca The Lord of The rings?</h6>
+                        <small class="small-text">Rianti Nurul</small>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non magnam illum tenetur quisquam, dolorem accusantium nam fugiat? Magni saepe voluptatem a dolorem voluptate blanditiis nostrum qui in, expedita eius sed?</p>                
+                    </div>       
+                </div>
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h6 class=" font-weight-bold">Bagaimana reaksimu setelah membaca The Lord of The rings?</h6>
+                        <small class="small-text">Rianti Nurul</small>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non magnam illum tenetur quisquam, dolorem accusantium nam fugiat? Magni saepe voluptatem a dolorem voluptate blanditiis nostrum qui in, expedita eius sed?</p>                
+                    </div>       
+                </div>
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h6 class=" font-weight-bold">Bagaimana reaksimu setelah membaca The Lord of The rings?</h6>
+                        <small class="small-text">Rianti Nurul</small>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non magnam illum tenetur quisquam, dolorem accusantium nam fugiat? Magni saepe voluptatem a dolorem voluptate blanditiis nostrum qui in, expedita eius sed?</p>                
+                    </div>       
+                </div>
+            </div>
+        </div>
+    </div>
 
         </section>
 

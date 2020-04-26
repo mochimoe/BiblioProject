@@ -5,35 +5,33 @@ a:5:{i:0;s:350:"<!DOCTYPE html>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Biblio - ";s:5:"title";N;i:1;s:1699:"</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Biblio - ";s:5:"title";N;i:1;s:1717:"</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
         <?= $this->assets->outputCss() ?>
     </head>
     <body>
         <section id="navbar">
-            <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light">
-                <h5 class="my-0 mr-md-auto font-weight-bolder">Biblio</h5>
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light shadow-sm">
+                <span class="my-0 mr-md-auto "><a href="/" class="logo text-dark font-weight-bold">Biblio</a></span>
                 <nav class=" my-2 my-md-0 mr-md-3">
                     <a class="p-3 text-dark" href="#">Beranda</a>
                     <a class="p-3 text-dark" href="#">Tentang</a>
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
-                    <a class="fas fa-user dropdown-toggle" style="background-color: black;"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-
+                    <a class="fas fa-user dropdown-toggle" style="color: black;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/posts/create">Buat Post</a>
+                        <a class="dropdown-item" href="/posts/show">Buat Post</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="/home/logout">Logout</a>
                     </div>
                 </div>
-                
             </div>
         </section>
 
-        <section class="container">
+        <section class="mb-3">
             ";s:7:"content";N;i:2;s:811:"
         </section>
 

@@ -1,29 +1,25 @@
 <?php
- namespace MyApp\Models;
+
+namespace MyApp\Models;
 
 use Phalcon\Mvc\Model;
 
-class Posts extends Model
+class Komens extends Model
 {
     public $id;
+    public $isi_komen;
+    public $id_post;
     public $id_user;
-    public $judul;
-    public $isi;
 
     public function initialize(){
         $this->setConnectionService('db');
-       // $this->setWriteConnectionService('db');
         $this->setSchema('dbo');
-        $this->setSource('Posts');
+        $this->setSource('Komens');
 
-        $this->hasMany(
-            'id',
-            Komens::class,
+        $this->belongsTo(
             'id_post',
-            [
-                'reusable' => true,
-                'alias'    => 'komen',
-            ]
+            Posts::class,
+            'id'
         );
         $this->belongsTo(
             'id_user',

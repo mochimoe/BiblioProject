@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Biblio - {% block title %}{% endblock %}</title>
+        <title>Biblio - <?= $this->tag->getTitle() ?></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
-        {{ assets.outputCss() }}
+        <?= $this->assets->outputCss() ?>
     </head>
     <body>
         <section id="navbar">
@@ -32,7 +32,53 @@
         </section>
 
         <section class="mb-3">
-            {% block content %}{% endblock %}
+            
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <div class="section-row"><h5 class=" font-weight-bold">Diskusi Lainnya</h5></div>
+                <div class="card border mb-3 ">
+                    <div class="card-body">
+                        list diskusi lainnya
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="section-row"><h5 class=" font-weight-bold ">Halaman Detail</h5></div>
+
+                <div class="section-row">
+                    <h5 class="lead"><?= $posts->judul ?></h5>
+                    <small>By : Author</small>
+                </div>
+                <div class="section-row">
+                    <p>
+                        <?= $posts->isi ?>
+                    </p>
+                </div>
+
+                <div class="dropdown-divider"></div>
+                <div class="section-row"><h5 class="font-weight-bold">Komentar Netizen</h5></div>
+                <div class="section-row">
+                    <form action="/komen/create/<?= $posts->id ?>" method="post">
+                        <input type="text" name="isi_komen" class="form-control" placeholder="komen disini hyung...">
+                        <div class="d-flex flex-row-reverse ">
+                            <button class="btn btn-sm btn-dark">Komen skuy</button>
+                        </div>
+                    </form>
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-title card-header font-weight-bold">Ini yang komen</div>
+                    <div class="card-body">
+                        <p>ini isi komennya</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
         </section>
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->

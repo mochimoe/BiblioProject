@@ -10,5 +10,12 @@ $router->addGet(
         "action"            => "read"
     ]
 );
+$router->addGet(
+    "/posts",
+    [
+        "controller"        => "posts",
+        "action"            => "create"
+    ]
+);
 
 $router->handle($_SERVER['REQUEST_URI']);

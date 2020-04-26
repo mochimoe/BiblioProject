@@ -1,5 +1,8 @@
 <?php
+
 declare(strict_types=1);
+use Phalcon\Assets\Asset\Css;
+use Phalcon\Assets\Asset\Js;
 
 
 class SignupController extends ControllerBase
@@ -7,6 +10,8 @@ class SignupController extends ControllerBase
     public function indexAction()
     {
         $this->tag->setTitle('Daftar Akun');
+        $css1 = new Css('css/style.css');
+        $this->assets->addAsset($css1);
         
     }
     public function registerAction(){
@@ -21,6 +26,12 @@ class SignupController extends ControllerBase
         $result = $db->execute($sql);
 
         //echo ($sql);
+        return $this->dispatcher->forward(
+            [
+                'controller' => 'session',
+                'action'     => 'index',
+            ]
+        );
 
     }
 

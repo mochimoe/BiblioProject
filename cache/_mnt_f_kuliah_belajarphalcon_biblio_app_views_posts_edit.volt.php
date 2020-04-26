@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Biblio - {% block title %}{% endblock %}</title>
+        <title>Biblio - <?= $this->tag->getTitle() ?></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
-        {{ assets.outputCss() }}
+        <?= $this->assets->outputCss() ?>
     </head>
     <body>
         <section id="navbar">
@@ -32,7 +32,27 @@
         </section>
 
         <section class="mb-3">
-            {% block content %}{% endblock %}
+            
+<div class="p-3 d-flex justify-content-center">
+    <div class="card mb-3" style="width:35%;">
+        <div class="card-header">Edit Post</div>
+        <div class="card-body">
+            <form action="/posts/update/<?= $posts->id ?>" method="post">
+                <div class="form-group">
+                    <label for="judul" class="">Judul Buku</label>
+                    <input type="text" name="judul"class="form-control" value="<?= $posts->judul ?>">
+                </div>
+                <div class="form-group">
+                    <label for="judul" class=" ">Isi Post</label>
+                    <textarea class="form-control" name="isi" value=""><?= $posts->isi ?></textarea>
+                </div>
+                <button type="submit" class="btn btn-sm btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
         </section>
 
         <!-- jQuery first, then Popper.js, and then Bootstrap's JavaScript -->

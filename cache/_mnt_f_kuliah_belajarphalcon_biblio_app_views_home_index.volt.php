@@ -14,7 +14,7 @@
     <body>
         <section id="navbar">
             <div class="container d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light">
-                <h5 class="my-0 mr-md-auto font-weight-bolder">Biblio</h5>
+                <span class="my-0 mr-md-auto "><a href="/" class="logo text-dark font-weight-bold">Biblio</a></span>
                 <nav class=" my-2 my-md-0 mr-md-3">
                     <a class="p-3 text-dark" href="#">Beranda</a>
                     <a class="p-3 text-dark" href="#">Tentang</a>

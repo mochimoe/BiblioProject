@@ -9,6 +9,8 @@ class HomeController extends ControllerBase
 
     public function indexAction()
     {
+        $css1 = new Css('css/style.css');
+        $this->assets->addAsset($css1);
         return $this->view;
         
 

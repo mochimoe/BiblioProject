@@ -9,6 +9,7 @@ class SessionController extends ControllerBase
 
     public function indexAction()
     {
+
         $this->tag->setTitle('Masuk');
         return $this->view;
         
@@ -27,6 +28,9 @@ class SessionController extends ControllerBase
 
     public function startAction()
     {
+        $css1 = new Css('css/style.css');
+        $this->assets->addAsset($css1);
+        
         $this->tag->setTitle('Beranda');
         
         if (true === $this->request->isPost()) {

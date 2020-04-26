@@ -21,5 +21,6 @@ $loader->registerNamespaces(array(
     'Sqlsrv' => APP_PATH . '/library/Phalcon/Db/Adapter/Pdo',
     'Phalcon\Db\Dialect' => APP_PATH . '/library/Phalcon/Db/Dialect',
     'Phalcon\Db\Result' => APP_PATH . '/library/Phalcon/Db/Result',
+    'MyApp\Models' => APP_PATH . '/models/',
 
 ))->register();
