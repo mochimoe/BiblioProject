@@ -3,6 +3,12 @@ declare(strict_types=1);
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Assets\Asset\Css;
+use Phalcon\Mvc\Model\Query;
+use Phalcon\Paginator\Adapter\Model as PaginatorModel;
+use Phalcon\Mvc\Model\Criteria;
+use Phalcon\Paginator\Adapter\NativeArray as PaginatorArray;
+use Phalcon\Paginator\Adapter\QueryBuilder as PaginatorQueryBuilder;
+use Phalcon\Http\Request;
 
 use MyApp\Models\Posts;
 use MyApp\Models\Users;
@@ -130,12 +136,24 @@ class PostsController extends ControllerBase
         
         //function
         $post = Posts::findFirstById($id);
+       // $komen = Komens::find();
+        $user = Users::find();
 
-        //$this->view->posts = $post;
-        $this->view->disable();
-        $komen = $post->komen;
-        var_dump($komen);
+        $auth = $this->session->get('auth');
+        $this->view->auth = $auth;
 
+
+        $this->view->posts = $post;
+        // $this->view->disable();
+        $this->view->komenss = $post->komen;
+       // var_dump($post);
+        $this->view->users = $user;
+
+        // foreach ($post->komen as $komenss) {
+        //     echo $komenss->isi_komen;
+        // }
+
+       
     }
 
 }

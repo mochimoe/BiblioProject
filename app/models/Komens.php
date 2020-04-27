@@ -19,12 +19,12 @@ class Komens extends Model
         $this->belongsTo(
             'id_post',
             Posts::class,
-            'id'
+            'id',
         );
         $this->belongsTo(
             'id_user',
             Users::class,
-            'id'
+            'id',
         );
     }
 

@@ -28,7 +28,7 @@ class Posts extends Model
         $this->belongsTo(
             'id_user',
             Users::class,
-            'id'
+            'id',
         );
     }
 

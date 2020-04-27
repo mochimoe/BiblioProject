@@ -19,13 +19,13 @@ class Users extends Model
             $this->hasMany(
                 'id',
                 Posts::class,
-                'id_user'
+                'id_user',
             );
     
             $this->hasMany(
                 'id',
                 Komens::class,
-                'id_user'
+                'id_user',
             );
         
     }

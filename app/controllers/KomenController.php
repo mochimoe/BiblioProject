@@ -47,5 +47,24 @@ class KomenController extends ControllerBase
 
     }
 
+    public function deleteAction($id)
+    {
+        $komen = Komens::findFirst($id);
+        $postid = $komen->id_post;
+        if($komen->delete())
+        {
+            return $this->dispatcher->forward(
+                [
+                    'controller' => 'posts',
+                    'action'     => 'detail',
+                    'params'    => [$postid],
+                ]
+            );
+        }else
+        {
+            echo "kapok ga iso";
+        }
+    }
+
 }
 

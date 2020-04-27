@@ -2,6 +2,24 @@
 
 body{
     font-family: 'Lato', sans-serif;
+   
+}
+.body-index{
+    background-image: url("https://i.ibb.co/YX2XhWY/bg-biblio-2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.header-text{
+    font-size: 60px;
+    font-weight: bolder;
+}
+.p-header
+{
+    font-size: 25px;
+    font-weight: bold;
 }
  
 .jumbotron{

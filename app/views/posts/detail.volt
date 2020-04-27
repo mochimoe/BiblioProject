@@ -36,13 +36,23 @@
                     </form>
                     
                 </div>
-
-                <div class="card">
-                    <div class="card-title card-header font-weight-bold">Ini yang komen</div>
+                {% for komen in komenss %}
+                    {% for user in users %}
+                        {% if (user.id == komen.id_user) %}
+                <div class="card my-3">
+                    <div class="card-title card-header font-weight-bold">{{user.nama}}</div>
                     <div class="card-body">
-                        <p>ini isi komennya</p>
+                        <p>{{komen.isi_komen}}</p>
+                    </div>
+                    <div class="card-footer">
+                        {% if (user.id == auth['id']) %}
+                        <a href="/komen/delete/{{komen.id}}" class="small-text">Hapus</a>
+                        {% endif %}
                     </div>
                 </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
                 
             </div>
         </div>

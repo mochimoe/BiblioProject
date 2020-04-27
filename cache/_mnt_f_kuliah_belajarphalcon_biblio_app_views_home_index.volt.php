@@ -24,7 +24,7 @@
                     <a class="fas fa-user dropdown-toggle" style="color:black"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/posts/create">Buat Post</a>
+                        <a class="dropdown-item" href="/posts/show">Buat Post</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/home/logout">Logout</a>
                     </div>

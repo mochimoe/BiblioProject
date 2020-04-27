@@ -11,6 +11,8 @@
         font-size: 14px;
       }
     </style>
+    {{ assets.outputCss() }}
+</head>
 </head>
 <body>
     <div class="d-flex justify-content-center h-100">
@@ -18,7 +20,7 @@
         <div class="container">
           {{ flash.output() }}
         </div>
-        <div class="card shadow w-125">
+        <div class="card shadow w-125 border border-0">
           <div class="card-body">
               <h3 class="card-title font-weight-bolder p-3">MASUK KE AKUN BIBLIO</h3>
               <form action="/session/start" method="POST">
@@ -30,7 +32,7 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                   </div>
-                  <button type="submit" class="btn btn-sm btn-primary">Masuk</button>
+                  <button type="submit" class="btn btn-sm btn-outline-dark">Masuk</button>
                   <small class="content-align-left"><a href="/signup">Daftar, jika belum memiliki akun</a></small>
                 </form>
           </div>
