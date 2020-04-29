@@ -57,8 +57,8 @@ class SessionController extends ControllerBase
 
                 return $this->dispatcher->forward(
                     [
-                        'controller' => 'home',
-                        'action'     => 'index',
+                        'controller' => 'posts',
+                        'action'     => 'show',
                     ]
                 );
             }

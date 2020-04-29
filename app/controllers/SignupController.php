@@ -32,6 +32,9 @@ class SignupController extends ControllerBase
                 'action'     => 'index',
             ]
         );
+        $this->flash->success(
+            'Akun berhasil dibuat, silahkan login'
+        );
 
     }
 

@@ -20,8 +20,8 @@ class IndexController extends ControllerBase
             // Retrieve its value
             return $this->dispatcher->forward(
                 [
-                    'controller' => 'home',
-                    'action'     => 'index',
+                    'controller' => 'posts',
+                    'action'     => 'show',
                 ]
             );
         }

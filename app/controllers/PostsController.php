@@ -23,12 +23,17 @@ class PostsController extends ControllerBase
 
     }
 
-    public function showAction()
+    public function showAction() //untuk menampilkan list postingan yg dibuta user
     {
         $css1 = new Css('css/style.css');
         $this->assets->addAsset($css1);
 
         $this->tag->setTitle('Dashboard');
+
+        $auth = $this->session->get('auth');
+        $this->view->auth = $auth;
+
+        $user = Users::find();
 
         $find_post = Posts::find([
             'judul' => $judul,
@@ -36,10 +41,11 @@ class PostsController extends ControllerBase
             'id' => $id
         ]);
         $this->view->posts = $find_post;
+         $this->view->users = $user;
 
 
     }
-    public function saveAction()
+    public function saveAction() //untuk create postingan yg telah dibuat, di insert kedalam database
     {
 
         $judul = $this->request->get('judul');
@@ -65,7 +71,7 @@ class PostsController extends ControllerBase
             ]
         );
     }
-    public function editAction($id)
+    public function editAction($id) //untuk menuju lama edit
     {
         $this->tag->setTitle('Edit Post');
         $css1 = new Css('css/style.css');
@@ -81,7 +87,7 @@ class PostsController extends ControllerBase
         //var_dump($find_post);
 
     }
-    public function updateAction($id)
+    public function updateAction($id) //untuk mengupdate data yg telah diubah, dan ditabase juga dirubah datanya. dan dikembalikan ke laman show
     {
         $this->tag->setTitle('Edit Post');
         $css1 = new Css('css/style.css');
@@ -110,7 +116,7 @@ class PostsController extends ControllerBase
         );
 
     }
-    public function deleteAction($id)
+    public function deleteAction($id)  //untuk menghapus postingan
     {
         $post = Posts::findFirst($id);
         if($post->delete())

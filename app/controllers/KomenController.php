@@ -9,7 +9,7 @@ use MyApp\Models\Komens;
 class KomenController extends ControllerBase
 {
 
-    public function createAction($postid)
+    public function createAction($postid) //untu membuat komentar baru dan menyimpannya ke database
     {
         
         $isi = $this->request->get('isi_komen');
@@ -47,7 +47,7 @@ class KomenController extends ControllerBase
 
     }
 
-    public function deleteAction($id)
+    public function deleteAction($id) //untuk menghapus komentar
     {
         $komen = Komens::findFirst($id);
         $postid = $komen->id_post;

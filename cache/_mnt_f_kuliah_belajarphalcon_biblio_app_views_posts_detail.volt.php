@@ -11,13 +11,13 @@
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
         <?= $this->assets->outputCss() ?>
     </head>
-    <body>
+    <body class="">
         <section id="navbar">
             <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light shadow-sm">
                 <span class="my-0 mr-md-auto "><a href="/" class="logo text-dark font-weight-bold">Biblio</a></span>
                 <nav class=" my-2 my-md-0 mr-md-3">
-                    <a class="p-3 text-dark" href="#">Beranda</a>
-                    <a class="p-3 text-dark" href="#">Tentang</a>
+                    <a class="p-3 text-dark" href="/">Beranda</a>
+                    <a class="p-3 text-dark" href="/posts/show">Review</a>
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
@@ -31,25 +31,24 @@
             </div>
         </section>
 
-        <section class="mb-3">
+        <section class="mb-3 ">
             
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <div class="section-row"><h5 class=" font-weight-bold">Diskusi Lainnya</h5></div>
-                <div class="card border mb-3 ">
-                    <div class="card-body">
-                        list diskusi lainnya
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12">
-                <div class="section-row"><h5 class=" font-weight-bold ">Halaman Detail</h5></div>
+        <div class="d-flex justify-content-center">
+            <div class="container">
+                <div class="section-row p-3 bg-dark rounded mb-3"><h5 class=" font-weight-bold  text-white">Halaman Detail</h5></div>
 
                 <div class="section-row">
-                    <h5 class="lead"><?= $posts->judul ?></h5>
-                    <small>By : Author</small>
+                    <h5 class="lead font-weight-bold"><?= $posts->judul ?></h5>
+                    <?php foreach ($users as $user) { ?>
+                        <?php if (($user->id == $posts->id_user)) { ?>
+
+                    <small>Author: <?= $user->nama ?></small>
+
+                        <?php } ?>
+                    <?php } ?>
                 </div>
+                
                 <div class="section-row">
                     <p>
                         <?= $posts->isi ?>
@@ -71,14 +70,17 @@
                     <?php foreach ($users as $user) { ?>
                         <?php if (($user->id == $komen->id_user)) { ?>
                 <div class="card my-3">
-                    <div class="card-title card-header font-weight-bold"><?= $user->nama ?></div>
+                    <div class="card-title card-header font-weight-bold d-flex">
+                        <p>
+                             <?= $user->nama ?>
+                        </p>
+                        <?php if (($user->id == $auth['id'])) { ?>
+                            <a href="/komen/delete/<?= $komen->id ?>" class="p-1 ml-3 justify-content-end small-text text-white bg-danger rounded align-self-baseline">Hapus</a>
+                        <?php } ?>
+                    </div>
+                    
                     <div class="card-body">
                         <p><?= $komen->isi_komen ?></p>
-                    </div>
-                    <div class="card-footer">
-                        <?php if (($user->id == $auth['id'])) { ?>
-                        <a href="/komen/delete/<?= $komen->id ?>" class="small-text">Hapus</a>
-                        <?php } ?>
                     </div>
                 </div>
                         <?php } ?>

@@ -11,13 +11,13 @@
         <script src="https://kit.fontawesome.com/f4dfdc0d09.js" crossorigin="anonymous"></script>
         <?= $this->assets->outputCss() ?>
     </head>
-    <body>
+    <body class="">
         <section id="navbar">
             <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-light shadow-sm">
                 <span class="my-0 mr-md-auto "><a href="/" class="logo text-dark font-weight-bold">Biblio</a></span>
                 <nav class=" my-2 my-md-0 mr-md-3">
-                    <a class="p-3 text-dark" href="#">Beranda</a>
-                    <a class="p-3 text-dark" href="#">Tentang</a>
+                    <a class="p-3 text-dark" href="/">Beranda</a>
+                    <a class="p-3 text-dark" href="/posts/show">Review</a>
                     <a class="p-3 text-dark" href="#">Kontak</a>
                 </nav>
                 <div class="dropdown-show">
@@ -31,7 +31,7 @@
             </div>
         </section>
 
-        <section class="mb-3">
+        <section class="mb-3 ">
             
 <div class="p-3 d-flex justify-content-center">
     <div class="card mb-3" style="width:35%;">

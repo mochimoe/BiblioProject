@@ -3,22 +3,21 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <div class="section-row"><h5 class=" font-weight-bold">Diskusi Lainnya</h5></div>
-                <div class="card border mb-3 ">
-                    <div class="card-body">
-                        list diskusi lainnya
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12">
-                <div class="section-row"><h5 class=" font-weight-bold ">Halaman Detail</h5></div>
+        <div class="d-flex justify-content-center">
+            <div class="container">
+                <div class="section-row p-3 bg-dark rounded mb-3"><h5 class=" font-weight-bold  text-white">Halaman Detail</h5></div>
 
                 <div class="section-row">
-                    <h5 class="lead">{{posts.judul}}</h5>
-                    <small>By : Author</small>
+                    <h5 class="lead font-weight-bold">{{posts.judul}}</h5>
+                    {% for user in users %}
+                        {% if(user.id == posts.id_user) %}
+
+                    <small>Author: {{user.nama}}</small>
+
+                        {% endif %}
+                    {% endfor %}
                 </div>
+                
                 <div class="section-row">
                     <p>
                         {{posts.isi}}
@@ -40,14 +39,17 @@
                     {% for user in users %}
                         {% if (user.id == komen.id_user) %}
                 <div class="card my-3">
-                    <div class="card-title card-header font-weight-bold">{{user.nama}}</div>
+                    <div class="card-title card-header font-weight-bold d-flex">
+                        <p>
+                             {{user.nama}}
+                        </p>
+                        {% if (user.id == auth['id']) %}
+                            <a href="/komen/delete/{{komen.id}}" class="p-1 ml-3 justify-content-end small-text text-white bg-danger rounded align-self-baseline">Hapus</a>
+                        {% endif %}
+                    </div>
+                    
                     <div class="card-body">
                         <p>{{komen.isi_komen}}</p>
-                    </div>
-                    <div class="card-footer">
-                        {% if (user.id == auth['id']) %}
-                        <a href="/komen/delete/{{komen.id}}" class="small-text">Hapus</a>
-                        {% endif %}
                     </div>
                 </div>
                         {% endif %}
